@@ -109,6 +109,58 @@ console.log(citrus,'slice');
 console.log(array1);
 console.log('---------------------------------');
 
+let set = new Set(['foo', 'bar', 'baz', 'foo']);
+console.log(typeof(set));
+
+let x =  Array.from(set);
+console.log(set,'set');
+console.log(typeof(set));
 
 
 
+console.log('---------------------------------');
+
+const express = require('express')
+
+const app = express()
+console.log(set,'app');
+
+// set = '111'
+
+app.get('/', function (req, res) {
+  console.log(set,'setxxx');
+
+ 
+  res.json({data:x})
+})
+
+console.log('---------------------------------');
+
+const map = new Map([[1, 2], [3, 4], [5, 6]]);
+Array.from(map);
+
+// console.log('map 1',map);
+// [[1, 2], [2, 4], [4, 8]]
+
+const mapper = new Map([['name', 'a'], ['name', 'b']]);
+ let val =  Array.from(mapper.values());
+
+// ['a', 'b'];
+
+let key = Array.from(mapper.keys());
+
+console.log('key:',key , val);
+
+// ['1', '2'];
+
+
+app.get('/1', function (req, res){
+
+
+  res.json({data:i})
+})
+
+
+
+app.listen(3000)
+console.log('---------------------------------');
